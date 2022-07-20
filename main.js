@@ -87,14 +87,14 @@ myImgSide.forEach(function(element, y){
             myImages[y].classList.add('show');
             myImgSide[y].classList.add('active');
         }
-    )
+    );
 });
 
 prevDom.addEventListener('click',
     function(){
         scrollLeft();
     }
-)
+);
 nextDom.addEventListener('click',
     function(){
         scrollRight();
