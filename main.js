@@ -55,26 +55,28 @@ function scrollRight(){
 };
 
 let currentImg = 0;
-let imgWrapperDom = ('.imgContainer');
+let imgWrapperDom = document.querySelector('.imgContainer');
 let itemsDom = document.querySelector('.items');
 
 for (x=0; x<images.length; x++){
     itemsDom.innerHTML += `<div class="item">
-    <img class="siteImg" src="${images[x].url}" alt="picture">
+    <img class="sideImg" src="${images[x].url}" alt="picture">
     <div class="description">
         <h2>${images[x].title}</h2>
         <p>${images[x].description}</p>
     </div>
     </div>`;
     imgWrapperDom.innerHTML += `<div class="imgWrapper">
-    <img class="sideImg" src="${images[x]}.url}">
+    <img class="sideImg" src="${images[x].url}">
     </div>`;
 }
 
 const myImages = document.querySelectorAll('.item');
 myImages[currentImg].classList.add('.show');
-const myImgSide = document.querySelectorAll('.sideImg');
+const myImgSide = document.querySelectorAll('.imgWrapper .sideImg');
+console.log(myImgSide, currentImg);
 myImgSide[currentImg].classList.add('.active');
+console.log(myImgSide, currentImg);
 const prevDom = document.querySelector('.prev');
 const nextDom = document.querySelector('.next');
 
@@ -84,6 +86,7 @@ myImgSide.forEach(function(element, y){
         function(){
             imgNoB();
             currentImg = y;
+            console.log(myImages, y);
             myImages[y].classList.add('show');
             myImgSide[y].classList.add('active');
         }
