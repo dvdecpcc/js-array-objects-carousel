@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+}
+
+.slider{
+    position: absolute;
+    width: 90vw;
+    height: 60vh;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.items{
+    width: 100%;
+    height: 100%;
+}
+.item{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.siteImg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.next, .prev{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.6);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: 10;
+}
+.prev{
+    left: 10px;
+}
+.next{
+    right: 10px;
+}
+
+.description{
+    position: absolute;
+    text-align: right;
+    top: 20px;
+    right: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+
+.imgContainer{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.imgWrapper{
+    width: calc(100%/5);
+    height: 100px;
+}
+.active{
+    outline: 2px solid white;
+    outline-offset: -2px;
+    opacity: 1;
+}
+.sideImg{
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    object-fit: cover;
+}
